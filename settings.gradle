@@ -1,3 +1,4 @@
+include ':screen'
 include ':push'
 include ':app'
 rootProject.name = "Screen"

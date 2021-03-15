@@ -41,10 +41,10 @@ class MainActivity : AppCompatActivity() {
         if (resultCode != RESULT_OK || requestCode != 1) return
         val mediaProjection: MediaProjection =
             mediaProjectionManager.getMediaProjection(resultCode, data!!)
-        if (mediaProjection != null) {
+        if (mediaProjection == null) {
             return
         }
-        socketLive = SocketLive(11000)
+        socketLive = SocketLive(this,11000)
         socketLive.start(mediaProjection)
     }
 
